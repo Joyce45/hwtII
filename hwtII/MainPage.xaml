@@ -7,7 +7,42 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/gaomei3.jpg" Opacity="0.5" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <NavigationView Name="NavigationView"
+                        SelectionChanged="NavigationView_OnSelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="bendilaiyuan" Name="bdly"
+                                     Content="本地来源"
+                                     Icon="Play">
+                </NavigationViewItem>
+
+                <NavigationViewItem Tag="wangluolaiyuan" Name="wlly"
+                                    Content="网络来源"
+                                    Icon="Link">
+                    
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.Content>
+                <Frame Name="MyFrame"></Frame>
+            </NavigationView.Content>
+
+            <NavigationView.Header>
+                简易播放器
+            </NavigationView.Header>
+
+        </NavigationView>
 
     </Grid>
+
+
 </Page>

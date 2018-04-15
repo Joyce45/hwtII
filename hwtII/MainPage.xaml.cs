@@ -25,6 +25,27 @@ namespace hwtII
         public MainPage()
         {
             this.InitializeComponent();
+        
         }
+
+        private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+
+        {
+
+            if (bdly.IsSelected)
+            {
+                MyFrame.Navigate(typeof(PlayPage));
+                NavigationView.Header = "播放本地来源";
+            }
+
+            else if (wlly.IsSelected)
+            {
+                MyFrame.Navigate(typeof(DownPage));
+                NavigationView.Header = "播放网络来源";
+            }
+        }
+
+
+
     }
 }
